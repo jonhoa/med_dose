@@ -1,4 +1,3 @@
 class User < ApplicationRecord
-  def has_secure_method
-  end
+  has_secure_password
 end
