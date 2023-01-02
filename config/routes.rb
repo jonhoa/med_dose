@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/medicines" => "medicines#index"
   post "/medicines/new" => "medicines#create"
+  delete "/medicines/:id" => "medicines#destroy"
 end

@@ -4,5 +4,8 @@
 <li><%= med.name%></li>
 <li><%= med.dosage%></li>
 <li><%= med.frequency%></li>
+<li><%= med.id%></li>
+<!-- Delete function not working yet-->
+<%= link_to 'Delete',{ controller: 'medicines', action: 'destroy', id: med.id}, method: :delete , %>
 <hr/>
 <%end%>
