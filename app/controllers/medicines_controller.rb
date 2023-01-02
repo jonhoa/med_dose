@@ -15,5 +15,11 @@ class MedicinesController < ApplicationController
     if @medicine.save
         redirect_to "/medicines"
     end
+
+    def destroy
+      @medicine = Medicine.find_by(id: params[:id])
+      @medicine.destroy
+      redirect_to "/medicines"
+    end
   end
 end
