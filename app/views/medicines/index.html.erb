@@ -1,0 +1,8 @@
+<h1>Medicines</h1>
+<p>Medicine Table</p>
+<% @medicine.each do |med|%>
+<li><%= med.name%></li>
+<li><%= med.dosage%></li>
+<li><%= med.frequency%></li>
+<hr/>
+<%end%>

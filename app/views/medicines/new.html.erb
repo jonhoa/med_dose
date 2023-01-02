@@ -1,8 +1,16 @@
-<h1>Medicines</h1>
-<p>Medicine Table</p>
-<% @medicine.each do |med|%>
-<li><%= med.name%></li>
-<li><%= med.dosage%></li>
-<li><%= med.frequency%></li>
-<hr/>
+<h1>Create your medicine prescription </h1>
+<%= form_with url:"/medicines/new", method: :post do |form|%>
+<div>
+<%=form.label :name%>
+<%=form.text_field :name%>
+</div>
+<div>
+<%=form.label :dosage%>
+<%=form.number_field :dosage%>
+</div>
+<div>
+<%=form.label :frequency%>
+<%=form.number_field :frequency%>
+</div>
+<%=form.submit "Submit"%>
 <%end%>
