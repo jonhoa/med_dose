@@ -1,7 +1,13 @@
 class MedicinesController < ApplicationController
+  # authenticate and only show logged in user data
   def index
-    @medicine = Medicine.all
-    render "index"
+    if current_user = session[:user_id]
+      @medicine = Medicine.where(user_id: current_user)
+      render "index"
+    else
+      flash[:warning] = "You must be logged in to see this page"
+      redirect_to "/login"
+    end
   end
   
   def create
@@ -13,7 +19,7 @@ class MedicinesController < ApplicationController
     @medicine.save
     
     if @medicine.save
-        redirect_to "/medicines"
+      redirect_to "/medicines"
     end
 
     def destroy
