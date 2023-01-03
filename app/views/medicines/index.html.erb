@@ -1,5 +1,7 @@
-<h1>Medicines</h1>
-<p>Medicine Table</p>
+<h1>Account Page</h1>
+<h2>Hi There <%=current_user.firstname%>!</h2>
+<p>Welcome to your accounts page. Here you can edit and modify your prescriptions to your liking.</p>
+<hr/>
 <% @medicine.each do |med|%>
 <li><%= med.name%></li>
 <li><%= med.dosage%></li>
