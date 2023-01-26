@@ -1,0 +1,18 @@
+<h1>Update your medicine prescription </h1>
+<%= form_with url:"/medicines/#{med.id}", method: :patch do |form|%>
+<div>
+<%=form.label :name%>
+<%=form.text_field :name%>
+</div>
+<div>
+<%=form.label :dosage%>
+<%=form.number_field :dosage%>
+</div>
+<div>
+<%=form.label :frequency%>
+<%=form.number_field :frequency%>
+</div>
+<%=form.submit "Submit"%>
+<%end%>
+
+<%= link_to "Back", :back%>

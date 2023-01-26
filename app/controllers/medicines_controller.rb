@@ -29,6 +29,17 @@ class MedicinesController < ApplicationController
     medicine.destroy
     redirect_to "/medicines"
   end
+
+  def update
+    medicine = Medicine.find(params[:id])
+    medicine.update(
+    name: params[:name],
+    dosage: params[:dosage],
+    frequency: params[:frequency],
+    user_id: session[:user_id]
+  )
+    redirect_to "/medicines"
+  end
 end
 
 
