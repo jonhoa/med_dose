@@ -2,12 +2,31 @@
 <h2>Hi There <%=current_user.firstname%>!</h2>
 <p>Welcome to your accounts page. Here you can edit and modify your prescriptions to your liking.</p>
 <hr/>
-<% @medicine.each do |med|%>
+
+<!--Add new-->
+<%=link_to "Add New", medicines_new_path, class: "btn btn-primary"%>
+
+
+<% @medicines.each do |med|%>
+<tr id ="record_<%med.id%>">
 <li><%= med.name%></li>
 <li><%= med.dosage%></li>
 <li><%= med.frequency%></li>
 <li><%= med.id%></li>
+
+<!--update button not working-->
+<%= link_to "Update"%>
 <!-- Delete function not working yet-->
-<%= link_to 'Delete',{ controller: 'medicines', action: 'destroy', id: med.id}, method: :delete%>
+<%= link_to 'Delete',"/medicines/#{med}", method: :delete %>
+<%= button_to "delete", {:controller => :medicines, :action => 'destroy', :id => med.id }, :method => :delete %>
+</p>
+</tr>
 <hr/>
 <%end%>
+
+
+<!--id-->
+
+
+
+
