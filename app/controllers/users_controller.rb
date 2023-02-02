@@ -7,9 +7,9 @@ class UsersController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
+    flash[:success] = "Successfully Created User!"
     if user.save
       session[:user_id] = user.id
-      flash[:success] = "Successfully Created User!"
       redirect_to "/medicines"
     else
       flash[:warning] = "Incorrect Email or Password"
