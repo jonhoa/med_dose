@@ -19,33 +19,21 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://localhost:3000/login">Login<span class="sr-only"></span></a>
-      </li>
-
       <%if current_user%>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost:3000/logout">Logout</a>
       </li>
-      <%else%>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:3000/logout">Login</a>
-      </li>
-      <%end%>
-
-      
-      <%if current_user%>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost:3000/medicines">Medicine</a>
+        <a class="nav-link" href="http://localhost:3000/medicines">Account</a>
       </li>
       <%else%>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost:3000/logout">Login</a>
       </li>
-      <%end%>
       <li class="nav-item">
         <a class="nav-link" href="http://localhost:3000/signup">Signup</a>
       </li>
+      <%end%>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   
