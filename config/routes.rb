@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/medicines" => "medicines#index"
   post "/medicines/new" => "medicines#create"
   patch "/medicines/:id" => "medicines#update"
+  get "/medicines/:id/edit" => "medicines#edit"
   delete "/medicines/:id" => "medicines#destroy"
 
   get "/signup" => "users#new"

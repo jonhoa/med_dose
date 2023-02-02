@@ -24,6 +24,11 @@ class MedicinesController < ApplicationController
     end
   end
 
+  def edit
+    @medicine = Medicine.find(params[:id])
+    render :edit
+  end
+
   def destroy
     medicine = Medicine.find(params[:id])
     medicine.destroy
@@ -31,14 +36,16 @@ class MedicinesController < ApplicationController
   end
 
   def update
-    medicine = Medicine.find(params[:id])
-    medicine.update(
-    name: params[:name],
-    dosage: params[:dosage],
-    frequency: params[:frequency],
+    @medicine = Medicine.find(params[:id])
+    @medicine.update(
+    name: params[:name] ||@medicine.name,
+    dosage: params[:dosage] || @medicine.dosage,
+    frequency: params[:frequency] || @medicine.frequency,
     user_id: session[:user_id]
   )
+    if @medicine.save
     redirect_to "/medicines"
+    end
   end
 end
 
