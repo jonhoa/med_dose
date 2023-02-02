@@ -3,17 +3,17 @@
 <%= form_with url:"/medicines/#{@medicine.id}", method: :patch do |form|%>
 <div>
 <%=form.label :name%>
-<%=form.text_field :name%>
+<%=form.text_field :name, placeholder: @medicine.name%>
 </div>
 <div>
 <%=form.label :dosage%>
-<%=form.number_field :dosage%>
+<%=form.number_field :dosage, placeholder: @medicine.dosage.to_i%>
 </div>
 <div>
 <%=form.label :frequency%>
-<%=form.number_field :frequency%>
+<%=form.number_field :frequency, placeholder: @medicine.frequency%>
 </div>
-<%=form.submit "Submit"%>
+<%=form.submit "Save", class: "btn btn-primary"%>
 <%end%>
 
 <%= link_to "Back", :back%>

@@ -4,7 +4,7 @@
 <hr/>
 
 <!--Add new-->
-<%=link_to "Add New", medicines_new_path, class: "btn btn-primary"%><br />
+<%=link_to "Add New", medicines_new_path, class: "btn btn-success"%><br />
 
 <br />
 <% @medicines.each do |med|%>
@@ -15,7 +15,7 @@
 <li><%= med.id%></li>
 
 <!--update button not working-->
-<%= link_to "edit","/medicines/#{med.id}/edit", method: :get, :action => 'edit', data: { "turbo-method": :edit }%>
+<%= link_to "Edit","/medicines/#{med.id}/edit", method: :get, :action => 'edit', data: { "turbo-method": :edit }%>
 <!-- Delete function working-->
 <%= link_to 'Delete',"/medicines/#{med.id}", method: :delete, :action => 'destroy', data: { "turbo-method": :delete }%>
 <%# <%= button_to "delete", {:controller => :medicines, :action => 'destroy', :id => med.id }, :method => :delete %> 
