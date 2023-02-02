@@ -1,19 +1,19 @@
 <h1>Update your Medicine Prescription </h1>
-
+<hr/>
 <%= form_with url:"/medicines/#{@medicine.id}", method: :patch do |form|%>
 <div>
 <%=form.label :name%>
-<%=form.text_field :name, placeholder: @medicine.name%>
+<%=form.text_field :name, value: @medicine.name%>
 </div>
 <div>
 <%=form.label :dosage%>
-<%=form.number_field :dosage, placeholder: "#{@medicine.dosage}"%>
+<%=form.number_field :dosage, value: "#{@medicine.dosage}"%>
 </div>
 <div>
 <%=form.label :frequency%>
-<%=form.number_field :frequency, placeholder: "#{@medicine.frequency}"%>
+<%=form.number_field :frequency, placeholder: "#{@medicine.frequency}", value: "#{@medicine.frequency}"%>
 </div>
 <%=form.submit "Save", class: "btn btn-primary"%>
 <%end%>
 
-<%= link_to "Back", :back%>
+<%= link_to "Discard", :back%>
