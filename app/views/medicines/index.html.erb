@@ -9,10 +9,13 @@
 <br />
 <% @medicines.each do |med|%>
 <tr id ="record_<%med.id%>">
+<div style ="background-image: url('/img2.png');">
+ 
 <li><%= med.name%></li>
 <li><%= med.dosage%></li>
 <li><%= med.frequency%></li>
 <li><%= med.id%></li>
+</div>
 
 <!--update button not working-->
 <%= link_to "Edit","/medicines/#{med.id}/edit", method: :get, :action => 'edit', data: { "turbo-method": :edit }%>
