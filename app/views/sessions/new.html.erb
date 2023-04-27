@@ -1,14 +1,16 @@
-<div class ="container-fluid-1" style="padding:100px 10px 100px 140px; border:orange; border-width:5px; border-style:solid;">
+<div class ="container-fluid-1" style="padding:100px 140px 100px 140px; border:orange; border-width:5px; border-style:solid;">
 <%= image_tag '/img1.png', width: '120em', height: '180em', align: "right"%>
-<h1 style="align:center;"> Login </h1>
+<div class ="container-fluid">
+<h1 style="text-align:center;"> Login </h1>
+</div>
 <%= form_tag "/login", method: :post do%>
-<div>
-<%= label_tag :email%>
-<%= text_field_tag :email%>
+<div class ="input-form" >
+<%= label_tag :email, nil, :style => "color: black; font-weight:bold;"%><br/>
+<%= text_field_tag :email, nil, style:"width: 50%; margin: 8px 0; display: inline-block; border: 7px solid green box-sizing: border-box;" %>
 </div>
 <div>
-<%= label_tag :password%>
-<%= password_field_tag :password%>
+<%= label_tag :password, nil, :style => "color: black; font-weight:bold;"%><br/>
+<%= password_field_tag :password, nil, style:"width: 50%; margin: 8px 0; display: inline-block; border: 7px solid green box-sizing: border-box;"%>
 </div>
 <%= submit_tag "Login", class:"btn btn-primary"%>
 <%= link_to "Forgot Password?", "/signup"%>
