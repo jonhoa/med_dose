@@ -9,24 +9,30 @@
 <br />
 <% @medicines.each do |med|%>
 <tr id ="record_<%med.id%>">
-<div class = "container-item">
-<div class = "container-background" style ="background-image: url('/img2.png'); background-size: 7em 10em; background-repeat: no-repeat; background-position: right bottom; padding-top: 1.6em;">
- 
-<li><%= med.name%></li>
-<li><%= med.dosage%></li>
-<li><%= med.frequency%></li>
-<li><%= med.id%></li>
 
-<!--update button not working-->
+<div class = "container-background" style ="background-color: green; background-image: url('/img2.png'); background-size: 8em 14em; background-repeat: no-repeat; background-position: left bottom; padding-top: 2em;">
+
+<div class = "items" style= "padding-left: 1.7em; background-color: purple; padding-top: 50px;">
+<div class = "container-item" style= "background-color: red;">
+<ol style="list-style-type: none;">
+<li>Name: <%= med.name%></li>
+<li>Dose: <%= med.dosage%></li>
+<li>Freq: <%= med.frequency%></li>
+<li>Id: <%= med.id%></p>
+</li>
+</ol>
+</div>
+
+
 <%= link_to "Edit","/medicines/#{med.id}/edit", method: :get, :action => 'edit', data: { "turbo-method": :edit }%>
-<!-- Delete function working-->
 <%= link_to 'Delete',"/medicines/#{med.id}", method: :delete, :action => 'destroy', data: { "turbo-method": :delete }%>
 <%# <%= button_to "delete", {:controller => :medicines, :action => 'destroy', :id => med.id }, :method => :delete %> 
-</p>
 </tr>
+</div>
 <hr/>
+
 </div>
-</div>
+
 <%end%>
 
 
