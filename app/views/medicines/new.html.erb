@@ -1,18 +1,17 @@
 <h1>Create your Medicine Prescription </h1>
 <%= form_with url:"/medicines/new", method: :post do |form|%>
 <div><hr/>
-<%=form.label :name%>
+<%=form.label :name, nil, :style => "color: black; font-weight:bold;"%><br/>
 <%=form.text_field :name%>
 </div>
 <div>
-<%=form.label :dosage%>
+<%=form.label :dosage, nil, :style => "color: black; font-weight:bold;"%><br/>
 <%=form.number_field :dosage%>
 </div>
 <div>
-<%=form.label :frequency%>
+<%=form.label :frequency, nil, :style => "color: black; font-weight:bold;"%><br/>
 <%=form.number_field :frequency%>
-</div>
-<%=form.submit "Save", class: "btn btn-primary"%>
+</div><br/>
+<%=form.submit "Save", class: "btn btn-primary"%>&nbsp;<%= link_to "Back", :back%>
 <%end%>
 
-<%= link_to "Back", :back%>

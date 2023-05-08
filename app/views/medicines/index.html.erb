@@ -1,7 +1,7 @@
-<h1>Account Page</h1>
-<h2>Hi There <%=current_user.firstname%>!</h2>
+<h1>Account Page</h1><hr/>
+<h3>Hi There <%=current_user.firstname%>!</h3>
 <p>Welcome to your accounts page. Here you can edit and modify your prescriptions to your liking.</p>
-<hr/>
+
 
 <!--Add new-->
 <%=link_to "Add New", medicines_new_path, class: "btn btn-success"%><br />
@@ -9,13 +9,13 @@
 <br />
 <% @medicines.each do |med|%>
 <tr id ="record_<%med.id%>">
-<div style ="background-image: url('/img2.png');">
+<div class = "container-item">
+<div class = "container-background" style ="background-image: url('/img2.png'); background-size: 7em 10em; background-repeat: no-repeat; background-position: right bottom; padding-top: 1.6em;">
  
 <li><%= med.name%></li>
 <li><%= med.dosage%></li>
 <li><%= med.frequency%></li>
 <li><%= med.id%></li>
-</div>
 
 <!--update button not working-->
 <%= link_to "Edit","/medicines/#{med.id}/edit", method: :get, :action => 'edit', data: { "turbo-method": :edit }%>
@@ -25,6 +25,8 @@
 </p>
 </tr>
 <hr/>
+</div>
+</div>
 <%end%>
 
 
